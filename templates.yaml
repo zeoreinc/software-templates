@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: zeore-collection
+  description: A collection of Example Software Templates for Zeore
+spec:
+  type: url
+  targets:
+    - templates/github/go-backend/.zeore/template.yaml
+    - templates/github/nodejs-backend/.zeore/template.yaml
+    - templates/azure/dotnet-frontend/.zeore/template.yaml
+    - templates/github/spring-boot-backend/.zeore/template.yaml
+    - templates/github/argocd/.zeore/template.yaml
+    - templates/github/launch-ansible-job/.zeore/template.yaml
+    - templates/github/define-ansible-job/.zeore/template.yaml
+    - templates/github/register-component/.zeore/template.yaml
+    - templates/github/techdocs/.zeore/template.yaml
