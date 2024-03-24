@@ -4,13 +4,17 @@ metadata:
   name: zeore-collection
   description: A collection of Example Software Templates for Zeore
 spec:
+  type: url
   targets:
-    - ./templates/github/go-backend/.zeore/template.yaml
-    - ./templates/github/nodejs-backend/.zeore/template.yaml
-    - ./templates/azure/dotnet-frontend/.zeore/template.yaml
-    - ./templates/github/spring-boot-backend/.zeore/template.yaml
-    - ./templates/github/argocd/.zeore/template.yaml
-    - ./templates/github/launch-ansible-job/.zeore/template.yaml
-    - ./templates/github/define-ansible-job/.zeore/template.yaml
-    - ./templates/github/register-component/.zeore/template.yaml
-    - ./templates/github/techdocs/.zeore/template.yaml
+    - templates/github/go-backend/template.yaml
+    - templates/github/nodejs-backend/template.yaml
+    - templates/gitlab/python-backend/template.yaml
+    - templates/azure/dotnet-frontend/template.yaml
+    - templates/github/spring-boot-backend/template.yaml
+    - templates/github/quarkus-backend/template.yaml
+    - templates/github/argocd/template.yaml
+    - templates/github/launch-ansible-job/template.yaml
+    - templates/github/define-ansible-job/template.yaml
+    - templates/github/register-component/template.yaml
+    - templates/github/tekton/template.yaml
+    - templates/github/techdocs/template.yaml

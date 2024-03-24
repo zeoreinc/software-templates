@@ -64,8 +64,10 @@ spec:
           default: ../../../skeletons/github-actions/
           enum:
             - ../../../skeletons/github-actions/
+            - ../../../skeletons/tekton/
           enumNames:
             - GitHub Action
+            - Tekton
       dependencies:
         ci:
           oneOf:

@@ -1,12 +1,11 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: spring-boot-backend-template
-  title: Create a Spring Boot Backend application with a CI pipeline
-  description: Create a starter Spring Boot backend application with a CI pipeline
+  name: quarkus-backend-template
+  title: Create a Quarkus Backend application with a CI pipeline
+  description: Create a starter Quarkus Backend application with a CI pipeline
   tags:
-    - recommended
-    - spring-boot
+    - quarkus
     - java
     - maven
 spec:
@@ -59,6 +58,7 @@ spec:
       required:
         - groupId
         - artifactId
+        - version
         - javaPackageName
       properties:
         groupId:
@@ -69,13 +69,18 @@ spec:
         artifactId:
           title: Artifact ID
           type: string
-          default: spring-boot-app
+          default: quarkusapp
           description: Maven Artifact ID
+        version:
+          title: Version
+          type: string
+          default: 1.0.0-SNAPSHOT
+          description: Maven Artifact Version
         javaPackageName:
           title: Java Package Namespace
           type: string
-          default: io/zeore/spring-boot-app
-          description: Name for the Java Package (ensure to use the / character as this is used for folder structure) should match Group ID and Artifact ID
+          default: io.zeore.quarkusapp
+          description: Name for the Java Package (e.g. io.zeore.quarkusapp) should match Group ID and Artifact ID
     - title: Provide information about the CI method
       required:
         - ci
@@ -124,7 +129,7 @@ spec:
                   type: string
                   description: The namespace for deploying resources
   steps:
-    - id: sourceCodeTemplate
+    - id: template
       name: Generating the Source Code Component
       action: fetch:template
       input:
@@ -144,7 +149,8 @@ spec:
           ci: ${{ parameters.ci }}
           groupId: ${{ parameters.groupId }}
           artifactId: ${{ parameters.artifactId }}
-          javaPackageName: ${{ parameters.javaPackageName }}
+          version: ${{ parameters.version }}
+          javaPackageName: ${{ parameters.javaPackageName}}
           sourceControl: github.com
 
     - id: ciTemplate
@@ -169,7 +175,7 @@ spec:
           ci: ${{ parameters.ci }}
           groupId: ${{ parameters.groupId }}
           artifactId: ${{ parameters.artifactId }}
-          javaPackageName: ${{ parameters.javaPackageName }}
+          javaPackageName: ${{ parameters.javaPackageName}}
           sourceControl: github.com
 
     - id: catalogTemplate
@@ -192,7 +198,7 @@ spec:
           ci: ${{ parameters.ci }}
           groupId: ${{ parameters.groupId }}
           artifactId: ${{ parameters.artifactId }}
-          javaPackageName: ${{ parameters.javaPackageName }}
+          javaPackageName: ${{ parameters.javaPackageName}}
           sourceControl: github.com
 
     - id: publish
