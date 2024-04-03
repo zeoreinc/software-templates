@@ -16,5 +16,6 @@ spec:
     - templates/github/launch-ansible-job/template.yaml
     - templates/github/define-ansible-job/template.yaml
     - templates/github/register-component/template.yaml
+    - templates/github/pagerduty/template.yaml
     - templates/github/tekton/template.yaml
     - templates/github/techdocs/template.yaml
